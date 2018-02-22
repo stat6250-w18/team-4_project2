@@ -4,76 +4,80 @@
 *******************************************************************************;
 
 * 
-[Dataset 1 Name] frpm1415
-
-[Dataset Description] Student Poverty Free or Reduced Price Meals (FRPM) Data,
-AY2014-15
-
-[Experimental Unit Description] California public K-12 schools in AY2014-15
-
-[Number of Observations] 10,393      
-
-[Number of Features] 28
-
-[Data Source] The file http://www.cde.ca.gov/ds/sd/sd/documents/frpm1415.xls
-was downloaded and edited to produce file frpm1415-edited.xls by deleting
-worksheet "Title Page", deleting row 1 from worksheet "FRPM School-Level Data",
-reformatting column headers in "FRPM School-Level Data" to remove characters
-disallowed in SAS variable names, and setting all cell values to "Text" format
-
-[Data Dictionary] http://www.cde.ca.gov/ds/sd/sd/fsspfrpm.asp
-
-[Unique ID Schema] The columns "County Code", "District Code", and "School
-Code" form a composite key, which together are equivalent to the unique id
-column CDS_CODE in dataset gradaf15, and which together are also equivalent to
-the unique id column CDS in dataset sat15.
+[Team Number] team-4
 
 --
 
-[Dataset 2 Name] frpm1516
+[Dataset 1 Name] Fire_Inspections_2016
 
-[Dataset Description] Student Poverty Free or Reduced Price Meals (FRPM) Data,
-AY2015-16
+[Dataset Description] Information on Fire Inspections performed at a given location by the Fire Department.
 
-[Experimental Unit Description] California public K-12 schools in AY2015-16
+[Experimental Unit Description] Fire Inspections for the year 2016
 
-[Number of Observations] 10,453     
+[Number of Observations] 25,045 
+                   
+[Number of Features] 35
 
-[Number of Features] 28
+[Data Source] https://data.sfgov.org/Housing-and-Buildings/Fire-Inspections/wb4c-6hwj 
 
-[Data Source] The file http://www.cde.ca.gov/ds/sd/sd/documents/frpm1516.xls
-was downloaded and edited to produce file frpm1516-edited.xls by deleting
-worksheet "Title Page", deleting row 1 from worksheet "FRPM School-Level Data",
-reformatting column headers in "FRPM School-Level Data" to remove characters
-disallowed in SAS variable names, and setting all cell values to "Text" format
+[Data Dictionary] https://data.sfgov.org/api/views/wb4c-6hwj/files/eb85e2a6-5fc5-41bb-9ec1-844e5524f000?download=true&filename=FIR-0003_DataDictionary_fire-inspections.xlsx 
 
-[Data Dictionary] http://www.cde.ca.gov/ds/sd/sd/fsspfrpm.asp
-
-[Unique ID Schema] The columns "County Code", "District Code", and "School
-Code" form a composite key, which together are equivalent to the unique id
-column CDS_CODE in dataset gradaf15, and which together are also equivalent to
-the unique id column CDS in dataset sat15.
+[Unique ID Schema] The column “Inspection Number” is the primary key or unique ID, which also serves as the foreign key in datasets- Fire_Violations_2016 and Fire_Violations_2017. 
 
 --
 
-[Dataset 3 Name] gradaf15
+[Dataset 2 Name] Fire_Inspections_2017
 
-[Dataset Description] Graduates Meeting UC/CSU Entrance Requirements, AY2014-15
+[Dataset Description] Information on Fire Inspections performed at a given location by the Fire Department.
 
-[Experimental Unit Description] California public K-12 schools in AY2014-15
+[Experimental Unit Description] Fire Inspections for the year 2017
 
-[Number of Observations] 2,490
+[Number of Observations] 24,208
+                    
+[Number of Features] 35
 
-[Number of Features] 15
+[Data Source] https://data.sfgov.org/Housing-and-Buildings/Fire-Inspections/wb4c-6hwj 
 
-[Data Source] The file
-http://dq.cde.ca.gov/dataquest/dlfile/dlfile.aspx?cLevel=School&cYear=2014-15&cCat=UCGradEth&cPage=filesgradaf.asp
-was downloaded and edited to produce file gradaf15.xls by importing into Excel
-and setting all cell values to "Text" format
+[Data Dictionary] https://data.sfgov.org/api/views/wb4c-6hwj/files/eb85e2a6-5fc5-41bb-9ec1-844e5524f000?download=true&filename=FIR-0003_DataDictionary_fire-inspections.xlsx
 
-[Data Dictionary] http://www.cde.ca.gov/ds/sd/sd/fsgradaf09.asp
+[Unique ID Schema] The column “Inspection Number” is the primary key or unique ID, which also serves as the foreign key in datasets- Fire_Violations_2016 and Fire_Violations_2017.
 
-[Unique ID Schema] The column CDS_CODE is a unique id.
+
+--
+
+[Dataset 3 Name] Fire_Violations_2016
+
+[Dataset Description] Information on Fire Violations issued by the Fire Department at a given location.
+
+[Experimental Unit Description] Fire Violations for the year 2016
+
+[Number of Observations] 2,569
+                    
+[Number of Features] 19
+
+[Data Source] https://data.sfgov.org/Housing-and-Buildings/Fire-Violations/4zuq-2cbe 
+
+[Data Dictionary] https://data.sfgov.org/api/views/4zuq-2cbe/files/a68685a7-41f8-432f-976d-aafb2711198e?download=true&filename=FIR-0006_DataDictionary_fire-violations.xlsx
+
+[Unique ID Schema] The column “Violation ID” is the unique id.
+
+--
+
+[Dataset 4 Name] Fire_Violations_2017
+
+[Dataset Description] Information on Fire Violations issued by the Fire Department at a given location.
+
+[Experimental Unit Description] Fire Violations for the year 2017
+
+[Number of Observations] 5,142
+                    
+[Number of Features] 19
+
+[Data Source] https://data.sfgov.org/Housing-and-Buildings/Fire-Violations/4zuq-2cbe 
+
+[Data Dictionary] https://data.sfgov.org/api/views/4zuq-2cbe/files/a68685a7-41f8-432f-976d-aafb2711198e?download=true&filename=FIR-0006_DataDictionary_fire-violations.xlsx
+
+[Unique ID Schema] The column “Violation ID” is the unique id.
 
 --
 
