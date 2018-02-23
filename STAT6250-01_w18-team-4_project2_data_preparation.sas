@@ -123,28 +123,28 @@ run;
 
 * setup environmental parameters;
 %let inputDataset1URL =
-https://github.com/stat6250/team-0_project2/blob/master/data/frpm1415-edited.xls?raw=true
+https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Inspections_2016.xlsx?raw=true
 ;
 %let inputDataset1Type = XLS;
-%let inputDataset1DSN = frpm1415_raw;
+%let inputDataset1DSN = Fire_Inspections_2016_raw;
 
 %let inputDataset2URL =
-https://github.com/stat6250/team-0_project2/blob/master/data/frpm1516-edited.xls?raw=true
+https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Inspections_2017.xlsx?raw=true
 ;
 %let inputDataset2Type = XLS;
-%let inputDataset2DSN = frpm1516_raw;
+%let inputDataset2DSN = Fire_Inspections_2017_raw;
 
 %let inputDataset3URL =
-https://github.com/stat6250/team-0_project2/blob/master/data/gradaf15.xls?raw=true
+https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Violations_2016.xlsx?raw=true
 ;
 %let inputDataset3Type = XLS;
-%let inputDataset3DSN = gradaf15_raw;
+%let inputDataset3DSN = Fire_Violations_2016_raw;
 
 %let inputDataset4URL =
-https://github.com/stat6250/team-0_project2/blob/master/data/sat15-edited.xls?raw=true
+https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Violations_2017.xlsx?raw=true
 ;
 %let inputDataset4Type = XLS;
-%let inputDataset4DSN = sat15_raw;
+%let inputDataset4DSN = Fire_Violations_2017_raw;
 
 
 * load raw datasets over the wire, if they doesn't already exist;
