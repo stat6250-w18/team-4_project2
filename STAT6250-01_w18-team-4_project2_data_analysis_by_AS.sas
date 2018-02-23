@@ -5,11 +5,11 @@
 *******************************************************************************;
 
 *
-This file uses the following analytic dataset to address several research
-questions regarding college-preparation trends at CA public K-12 schools
+This file uses the following analytic dataset to address fire inspections
+performed at given location by Fire department.
 
 Dataset Name: cde_2014_analytic_file created in external file
-STAT6250-02_s17-team-0_project2_data_preparation.sas, which is assumed to be
+STAT6250-01_w18-team-4_project2_data_preparation.sas, which is assumed to be
 in the same directory as this file
 
 See included file for dataset properties
@@ -23,7 +23,7 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 
 * load external file that generates analytic datasets cde_2014_analytic_file,
   cde_2014_analytic_file_sort_frpm, and cde_2014_analytic_file_sort_sat;
-%include '.\STAT6250-02_s17-team-0_project2_data_preparation.sas';
+%include '.\STAT6250-01_w18-team-4_project2_data_preparation.sas';
 
 
 *******************************************************************************;
