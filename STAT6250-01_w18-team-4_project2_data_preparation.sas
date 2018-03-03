@@ -202,46 +202,44 @@ https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Violations_201
   removing blank rows, if needed;
 proc sort
         nodupkey
-        data=frpm1415_raw
-        dupout=frpm1415_raw_dups
-        out=frpm1415_raw_sorted(where=(not(missing(School_Code))))
+        data=Fire_Inspections_2016_raw
+        dupout=Fire_Inspections_2016_raw_dups
+        out=Fire_Inspections_2016_raw_sorted(where=(not(missing(Inspection Number))))
     ;
     by
-        County_Code
-        District_Code
-        School_Code
+        Inspection Address Zipcode
+        Inspection Number
     ;
 run;
 proc sort
         nodupkey
-        data=frpm1516_raw
-        dupout=frpm1516_raw_dups
-        out=frpm1516_raw_sorted
+        data=Fire_Inspections_2017_raw
+        dupout=Fire_Inspections_2017_raw_dups
+        out=Fire_Inspections_2017_raw_sorted
     ;
     by
-        County_Code
-        District_Code
-        School_Code
+        Inspection Address Zipcode
+        Inspection Number
     ;
 run;
 proc sort
         nodupkey
-        data=gradaf15_raw
-        dupout=gradaf15_raw_dups
-        out=gradaf15_raw_sorted
+        data=Fire_Violations_2016_raw
+        dupout=Fire_Violations_2016_raw_dups
+        out=Fire_Violations_2016_raw_sorted
     ;
     by
-        CDS_CODE
+        Violation Number
     ;
 run;
 proc sort
         nodupkey
-        data=sat15_raw
-        dupout=sat15_raw_dups
-        out=sat15_raw_sorted
+        data=Fire_Violations_2017_raw
+        dupout=Fire_Violations_2017_raw_dups
+        out=Fire_Violations_2017_raw_sorted
     ;
     by
-        CDS
+        Violation Number
     ;
 run;
 
