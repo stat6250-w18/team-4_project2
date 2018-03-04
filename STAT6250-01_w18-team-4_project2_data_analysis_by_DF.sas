@@ -176,7 +176,7 @@ Followup Steps: Try to find one more way to solve this problem.
 
 
 proc freq
-       data = SF_FireStats_1617_analytic_file noprint
+       data = SF_FireStats_0001_analytic_file noprint
    ;
    table
        Fire_Prevention_District / out = Count list
