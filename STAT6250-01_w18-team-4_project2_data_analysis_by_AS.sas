@@ -50,6 +50,26 @@ footnote3
 "However, assuming there are no data issues underlying this analysis, futher check needs to be performed with a larger data set."
 ;
 
+*
+
+
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+zip codes.
+
+Limitations: This methodology does not account for calls with missing data, 
+neither does it attempt to validate the data in any way.
+
+Followup Steps: Lookout for missing data and handle it and test with ,
+bigger data set.
+;
+
+proc freq data = SF_FireStats_1617_analytic_file order=freq;
+    tables Inspection_Address_Zipcode;
+run;
+
+title;
+footnote;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -74,6 +94,26 @@ footnote2
 footnote3
 "However we are testing with the subset of data and need to iteratively expand to a significant larger data set to conclude."
 ;
+
+*
+
+
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+inspection types.
+
+Limitations: This methodology does not account for calls with missing data, 
+neither does it attempt to validate the data in any way.
+
+Followup Steps: Lookout for missing data and handle it and test with ,
+much bigger data set.
+;
+
+proc freq data = SF_FireStats_1617_analytic_file order=freq;
+    tables Inspection_Type;
+run;
+
+title;
+footnote;
 
 
 *******************************************************************************;
@@ -100,3 +140,22 @@ footnote3
 "However,since this is a subset of data ,we will need to iteratively test with larger data sets before concluding "
 ;
 
+*
+
+
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+Batallions.
+
+Limitations: This methodology does not account for calls with missing data, 
+neither does it attempt to validate the data in any way.
+
+Followup Steps: Lookout for missing data and handle it and test with ,
+much bigger data set.
+;
+
+proc freq data = SF_FireStats_1617_analytic_file order=freq;
+    tables Battalion;
+run;
+
+title;
+footnote;
