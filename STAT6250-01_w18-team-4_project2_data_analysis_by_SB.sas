@@ -36,7 +36,7 @@ title2
 ;
 
 footnote1
-"Based on the data zip code 94015 has the maximum number of inspections."
+"Based on the data top 5 zip codes have the maximum number of Fire inspections."
 ;
 
 footnote2
@@ -137,7 +137,7 @@ footnote1
 ;
 
 footnote2
-"In future this data can help identify the patterns and assist with the initial steps"
+"In future this data can help identify the billable inspections even better."
 ;
 
 footnote3
@@ -149,14 +149,10 @@ Note: This compares the column "Billable_Inspections”
 from Fire_Inspections_2016 to the column of the same name from 
 Fire_Inspections_2016.
 
-Methodology: Use PROC FREQ to generate a frequency table based on the dataset
-on "Inspection_Address_Zipcode”. Then, use PROC SORT to temporarily sort 
-the data by descending count, in order to find the top three zip codes where 
-inspection took place. 
-Finally, use PROC PRINT to determine the top five zip codes where Fire 
-inspection took place.
+Methodology: Use PROC SQL to generate a table based on the dataset
+on "Billable_Inspection”.
 
-Limitations: This methodology does not account for Zip Codes with missing data, 
+Limitations: This methodology does not account for Billable Inspections with missing data, 
 nor does it attempt to validate the data in any way.
 
 Follow-up Steps: More carefully clean values in order to filter out any possible 
@@ -193,26 +189,18 @@ title2
 ;
 
 footnote1
-"This analysis would help identify the battalion that has completed maximum number of inspections."
+"This analysis would help identify the supervisor district that has maximum number of fire violations."
 ;
 
 footnote2
-"Various factors including team size,location ,time can then be considered to conclude the reason for the performance."
-;
-
-footnote3
 "However,since this is a subset of data ,we will need to iteratively test with larger data sets before concluding "
 ;
 
 *
 Note: This compares the column “Violation Item” and “Supervisor District”.
 
-Methodology: Use PROC FREQ to generate a frequency table based on the dataset
-on "Inspection_Address_Zipcode”. Then, use PROC SORT to temporarily sort 
-the data by descending count, in order to find the top three zip codes where 
-inspection took place. 
-Finally, use PROC PRINT to determine the top five zip codes where Fire 
-inspection took place.
+Methodology: Use PROC SQL to generate a table based on the dataset
+on "ISupervisor_District” and "Violation_Item.
 
 Limitations: This methodology does not account for Zip Codes with missing data, 
 nor does it attempt to validate the data in any way.
