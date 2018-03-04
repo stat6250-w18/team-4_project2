@@ -102,13 +102,13 @@ footnote2
 ;
 
 footnote3
-"Therefore, I am considering coding how to compare these two result."
+"Therefore, I am considering coding how to combine these two results together."
 ;
 
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the Neighborhood_Distric.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the frequency of the Fire Prevention District.
 
 Limitations: This methodology is not a good way to compare results by these two results.
 
@@ -145,11 +145,11 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: Which Station Area has completed the maximum number of inspections?'
+'Research Question: Which top 5 Fire Prevention District where Fire Inspections took place in the year 2016 and 2017?'
 ;
 
 title2
-"Rationale: This should help  identify the top Station Area."
+"Rationale: This result can help to know what we did to combine two data sets in prep sas file work or not."
 ;
 
 footnote1
@@ -157,21 +157,18 @@ footnote1
 ;
 
 footnote2
-"Only one sation area is not enough."
+"We can see this combine funcion work"
 ;
 
 footnote3
-"I will put top 10 station areas that has completed maximum number of inspections. "
+"The result shows that based on combine funcion, the two data sets add the corresponding attributes together. "
 ;
 
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the Station Area.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District.
 
-Limitations: This methodology will not help me to identities how many missing data I lost.
-
-Followup Steps: Try to find one more way to solve this problem.
 ;
 
 
