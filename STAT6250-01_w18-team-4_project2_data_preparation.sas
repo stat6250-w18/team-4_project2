@@ -78,72 +78,35 @@
 [Data Dictionary] https://data.sfgov.org/api/views/4zuq-2cbe/files/a68685a7-41f8-432f-976d-aafb2711198e?download=true&filename=FIR-0006_DataDictionary_fire-violations.xlsx
 
 [Unique ID Schema] The column “Violation ID” is the unique id.
-
---
-
-[Dataset 4 Name] sat15
-
-[Dataset Description] SAT Test Results, AY2014-15
-
-[Experimental Unit Description] California public K-12 schools in AY2014-15
-
-[Number of Observations] 2,331
-
-[Number of Features] 12
-
-[Data Source]  The file http://www3.cde.ca.gov/researchfiles/satactap/sat15.xls
-was downloaded and edited to produce file sat15-edited.xls by opening in Excel
-and setting all cell values to "Text" format
-
-[Data Dictionary] http://www.cde.ca.gov/ds/sp/ai/reclayoutsat.asp
-
-[Unique ID Schema] The column CDS is a unique id.
 ;
 
 
 * environmental setup;
-
-* create output formats;
-
-proc format;
-    value Percent_Eligible_FRPM_K12_bins
-        low-<.39="Q1 FRPM"
-        .39-<.69="Q2 FRPM"
-        .69-<.86="Q3 FRPM"
-        .86-high="Q4 FRPM"
-    ;
-    value PCTGE1500_bins
-        low-20="Q1 SAT_Scores_GE_1500"
-        20-<37="Q2 SAT_Scores_GE_1500"
-        37-<56.3="Q3 SAT_Scores_GE_1500"
-        56.3-high="Q4 SAT_Scores_GE_1500"
-    ;
-run;
 
 
 * setup environmental parameters;
 %let inputDataset1URL =
 https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Inspections_2016.xlsx?raw=true
 ;
-%let inputDataset1Type = XLS;
+%let inputDataset1Type = XLSX;
 %let inputDataset1DSN = Fire_Inspections_2016_raw;
 
 %let inputDataset2URL =
 https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Inspections_2017.xlsx?raw=true
 ;
-%let inputDataset2Type = XLS;
+%let inputDataset2Type = XLSX;
 %let inputDataset2DSN = Fire_Inspections_2017_raw;
 
 %let inputDataset3URL =
 https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Violations_2016.xlsx?raw=true
 ;
-%let inputDataset3Type = XLS;
+%let inputDataset3Type = XLSX;
 %let inputDataset3DSN = Fire_Violations_2016_raw;
 
 %let inputDataset4URL =
 https://github.com/stat6250/team-4_project2/blob/master/data/Fire_Violations_2017.xlsx?raw=true
 ;
-%let inputDataset4Type = XLS;
+%let inputDataset4Type = XLSX;
 %let inputDataset4DSN = Fire_Violations_2017_raw;
 
 
@@ -204,11 +167,11 @@ proc sort
         nodupkey
         data=Fire_Inspections_2016_raw
         dupout=Fire_Inspections_2016_raw_dups
-        out=Fire_Inspections_2016_raw_sorted(where=(not(missing(Inspection Number))))
+        out=Fire_Inspections_2016_raw_sorted(where=(not(missing(Inspection_Number))))
     ;
     by
-        Inspection Address Zipcode
-        Inspection Number
+        Inspection_Address_Zipcode
+        Inspection_Number
     ;
 run;
 proc sort
@@ -218,8 +181,8 @@ proc sort
         out=Fire_Inspections_2017_raw_sorted
     ;
     by
-        Inspection Address Zipcode
-        Inspection Number
+        Inspection_Address_Zipcode
+        Inspection_Number
     ;
 run;
 proc sort
@@ -229,7 +192,7 @@ proc sort
         out=Fire_Violations_2016_raw_sorted
     ;
     by
-        Violation Number
+        Violation_Number
     ;
 run;
 proc sort
@@ -239,7 +202,7 @@ proc sort
         out=Fire_Violations_2017_raw_sorted
     ;
     by
-        Violation Number
+        Violation_Number
     ;
 run;
 
