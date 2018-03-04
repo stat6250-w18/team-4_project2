@@ -28,7 +28,8 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 
 title1
-'Research Question: Which Fire Prevention District has maximum number of inspections?'
+'Research Question: Which top 5 Fire Prevention District has taken place 
+inspections?'
 ;
 
 title2
@@ -58,12 +59,28 @@ frequency of fire prevention district because there are so many records.
 Followup Steps: Try one more way to filter something more.
 ;
 
-proc freq data = SF_FireStats_1617_analytic_file order=freq;
-    tables Fire_Prevention_District;
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Fire_Prevention_District / out = Count list
+   ;
+
 run;
 
-title;
-footnote;
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
 
 
 *******************************************************************************;
