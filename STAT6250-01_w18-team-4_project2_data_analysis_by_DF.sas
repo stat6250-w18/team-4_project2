@@ -34,21 +34,21 @@ took place in the year 2016'
 
 title2
 'Rationale: This will help the team to know in 2016 which top 5 areas where 
-Fire Inspections took place.'
+Fire Inspections took place'
 ;
 
 footnote1
-"Based on the result district which is called 04 ranked first. This area
-happened 3765 times during 2016. It occupies almost 15% in total."
+'Based on the result district which is called 04 ranked first. This area
+happened 3765 times during 2016. It occupies almost 15% in total'
 ;
 
 footnote2
 'Rationale: This will help the team to know in 2016 which top 5 areas
-where Fire Inspections took place."
+where Fire Inspections took place.'
 ;
 
 footnote3
-Therefore, I am considering coding to list similar results happend in 2017."
+'Therefore, I am considering coding to list similar results happend in 2017'
 ;
 
 *
