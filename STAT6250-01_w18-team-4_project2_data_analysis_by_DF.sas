@@ -28,7 +28,7 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 
 title1
-'Research Question: What are top 5 Fire Prevention District where Fire Inspections took place in the year 2016.'
+'Research Question: What are the top 5 Fire Prevention District where Fire Inspections took place in the year 2016.'
 ;
 
 title2
@@ -40,11 +40,11 @@ footnote1
 ;
 
 footnote2
-'Rationale: This will help to know in 2016 which top 5 areas where Fire Inspections took place most.'
+'This will help to know in 2016 what are the top 5 areas where Fire Inspections took place most.'
 ;
 
 footnote3
-'I would like to know in 2017 which are top 5 areas where Fire Inspections took place most?'
+'I would like to know in 2017 what are the top 5 areas where Fire Inspections took place most?'
 ;
 
 *
@@ -86,7 +86,7 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: Research Question: What are top 5 Fire Prevention District where Fire Inspections took place in the year 2017'
+'Research Question: What are the top 5 Fire Prevention District where Fire Inspections took place in the year 2017'
 ;
 
 title2
@@ -94,15 +94,15 @@ title2
 ;
 
 footnote1
-"Based on the result district 04 ranked first again in 2017. This area happened 3975 times. It occupies almost 16% in total."
+"Based on the result district 04 ranked first again in 2017. This area happened 3975 times. It occupies 16.4480% in total."
 ;
 
 footnote2
-"Rationale: This will help the team to know only in 2017 where Fire Inspections took place most."
+"This will help to know only in 2017 where Fire Inspections took place most."
 ;
 
 footnote3
-"Therefore, I am considering coding how to combine these two results together."
+"I am considering coding how to combine these two results together."
 ;
 
 *
@@ -112,7 +112,7 @@ Methodology: Use PROC FREQ with order=freq option to list the frequency of the f
 
 Limitations: This methodology is not a good way to compare results by these two results.
 
-Followup Steps: try a comparing code different datasets.
+Followup Steps: try to code to combine different datasets.
 ;
 
 proc freq
@@ -145,24 +145,24 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: What are top 5 Fire Prevention District where Fire Inspections took place in the year 2016 and 2017?'
+'Research Question: What are the top 5 Fire Prevention District where Fire Inspections took place in the year 2016 and 2017?'
 ;
 
 title2
-"Rationale: This analysis would help to know what are top 5 areas where fire inspections took place both in 2016 and 2017."
+"Rationale: This analysis would help to know what are the top 5 areas where fire inspections took place both in 2016 and 2017."
 ;
 
 footnote1
-"We can see the 04 district took place most which is 7740. The number comes from results of first and second question by 3765 adding 3975."
+"We can see the 04 district took place most which is 7740. The number comes from results of first and second questions by adding 3765 and 3975."
 ;
 
 footnote2
-"We can see the 01w district took place second which is 4297. The number comes from results of first and second question by 2179 adding 2118."
+"We can see the 01w district rank second which is 4297. The number also comes from results of first and second questions by adding 2179 and 2118."
 
 ;
 
 footnote3
-"The result shows that based on combine funcion, the two data sets add the corresponding values together. "
+"The result shows that merging two data sets works successfully. "
 ;
 
 *
