@@ -48,7 +48,7 @@ where Fire Inspections took place."
 ;
 
 footnote3
-"Therefore, I am considering coding to list similar results happend in 2017."
+Therefore, I am considering coding to list similar results happend in 2017."
 ;
 
 *
@@ -60,6 +60,7 @@ Limitations: This methodology is only show the cases happened in 2016.
 
 Followup Steps: try to code to list result happened in 2017.
 ;
+
 
 proc freq
        data = Work.Fire_Inspections_2016_raw noprint
