@@ -28,23 +28,23 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 
 title1
-'Research Question: Which top 5 Fire Prevention District where Fire Inspections took place in the year 2016.'
+'Research Question: What are top 5 Fire Prevention District where Fire Inspections took place in the year 2016.'
 ;
 
 title2
-'Rationale: This will help to know in 2016 which top 5 areas where Fire Inspections took place.'
+'Rationale: This will help to know in 2016 where Fire Inspections took place most.'
 ;
 
 footnote1
-'Based on the result district 04 ranked first. This area happened 3765 times during 2016. It occupies almost 15% in total.'
+'Based on the result district 04 ranked first. This area happened 3765 times during 2016. It occupies 15.1035% in total.'
 ;
 
 footnote2
-'Rationale: This will help the team to know in 2016 which top 5 areas where  Fire Inspections took place.'
+'Rationale: This will help to know in 2016 which top 5 areas where Fire Inspections took place most.'
 ;
 
 footnote3
-'Therefore, I am considering coding to list similar results happend in 2017'
+'I would like to know in 2017 which are top 5 areas where Fire Inspections took place most?'
 ;
 
 *
@@ -86,11 +86,11 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: Research Question: Which top 5 Fire Prevention District where Fire Inspections took place in the year 2017'
+'Research Question: Research Question: What are top 5 Fire Prevention District where Fire Inspections took place in the year 2017'
 ;
 
 title2
-'Rationale: This will help the team to know in 2017 which top 5 areas where Fire Inspections took place.'
+'Rationale: This will help to know in 2017 where Fire Inspections took place most.'
 ;
 
 footnote1
@@ -98,7 +98,7 @@ footnote1
 ;
 
 footnote2
-"Rationale: This will help the team to know in 2017 which top 5 areas where  Fire Inspections took place."
+"Rationale: This will help the team to know only in 2017 where Fire Inspections took place most."
 ;
 
 footnote3
@@ -145,23 +145,24 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: Which top 5 Fire Prevention District where Fire Inspections took place in the year 2016 and 2017?'
+'Research Question: What are top 5 Fire Prevention District where Fire Inspections took place in the year 2016 and 2017?'
 ;
 
 title2
-"Rationale: This result can help to know what we did to combine two data sets in prep sas file work or not."
+"Rationale: This analysis would help to know what are top 5 areas where fire inspections took place both in 2016 and 2017."
 ;
 
 footnote1
-"This analysis would help to know the Station Area that has completed maximum number of inspections."
+"We can see the 04 district took place most which is 7740. The number comes from results of first and second question by 3765 adding 3975."
 ;
 
 footnote2
-"We can see this combine funcion work"
+"We can see the 01w district took place second which is 4297. The number comes from results of first and second question by 2179 adding 2118."
+
 ;
 
 footnote3
-"The result shows that based on combine funcion, the two data sets add the corresponding attributes together. "
+"The result shows that based on combine funcion, the two data sets add the corresponding values together. "
 ;
 
 *
