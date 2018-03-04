@@ -275,4 +275,36 @@ data SF_FireStats_1617_analytic_file;
     ;
 run;
 
+* build analytic dataset from raw datasets with the least number of columns and
+minimal cleaning/transformation needed to address research questions in
+corresponding data-analysis files;
 
+data SF_FireStats_0001_analytic_file;
+    retain
+        Inspection_Number
+        Inspection_Type
+        Inspection_Address_Zipcode
+        Battalion
+        Address
+        Violation_Id
+        Violation_Item
+        Zipcode_of_Incident
+    ;
+    keep
+        Inspection_Number
+        Inspection_Type
+        Inspection_Address_Zipcode
+        Battalion
+        Address
+        Violation_Id
+        Violation_Item
+        Zipcode_of_Incident
+    ;
+    merge
+        Fire_Inspections_2016_raw
+        Fire_Inspections_2017_raw
+    ;
+    by
+	Inspection_Number
+    ;
+run;
