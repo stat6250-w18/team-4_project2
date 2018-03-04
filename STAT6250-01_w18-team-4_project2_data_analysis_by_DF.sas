@@ -28,23 +28,19 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 
 title1
-'Research Question: Which top 5 Fire Prevention District where Fire Inspections
- took place in the year 2016'
+'Research Question: Which top 5 Fire Prevention District where Fire Inspections took place in the year 2016.'
 ;
 
 title2
-'Rationale: This will help the team to know in 2016 which top 5 areas where 
-Fire Inspections took place'
+'Rationale: This will help to know in 2016 which top 5 areas where Fire Inspections took place.'
 ;
 
 footnote1
-'Based on the result district which is called 04 ranked first. This area
- happened 3765 times during 2016. It occupies almost 15% in total.'
+'Based on the result district 04 ranked first. This area happened 3765 times during 2016. It occupies almost 15% in total.'
 ;
 
 footnote2
-'Rationale: This will help the team to know in 2016 which top 5 areas
-where  Fire Inspections took place.'
+'Rationale: This will help the team to know in 2016 which top 5 areas where  Fire Inspections took place.'
 ;
 
 footnote3
@@ -54,8 +50,7 @@ footnote3
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency
-of the Fire Prevention District.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District.
 Limitations: This methodology is only show the cases happened in 2016.
 
 Followup Steps: try to code to list result happened in 2017.
@@ -91,23 +86,19 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: Research Question: Which top 5 Fire Prevention District
-where Fire Inspections took place in the year 2017'
+'Research Question: Research Question: Which top 5 Fire Prevention District where Fire Inspections took place in the year 2017'
 ;
 
 title2
-'Rationale: This will help the team to know in 2017 which top 5 areas where 
- Fire Inspections took place.'
+'Rationale: This will help the team to know in 2017 which top 5 areas where Fire Inspections took place.'
 ;
 
 footnote1
-"Based on the result district 04 ranked first again in 2017. This area
- happened 3975 times. It occupies almost 16% in total."
+"Based on the result district 04 ranked first again in 2017. This area happened 3975 times. It occupies almost 16% in total."
 ;
 
 footnote2
-"Rationale: This will help the team to know in 2017 which top 5 areas
- where  Fire Inspections took place."
+"Rationale: This will help the team to know in 2017 which top 5 areas where  Fire Inspections took place."
 ;
 
 footnote3
@@ -117,10 +108,10 @@ footnote3
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the
-Neighborhood_Distric.
-Limitations: This methodology is not a good way to compare results 
-by these two results.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the Neighborhood_Distric.
+
+Limitations: This methodology is not a good way to compare results by these two results.
+
 Followup Steps: try a comparing code different datasets.
 ;
 
@@ -176,18 +167,35 @@ footnote3
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the
-Station Area.
-Limitations: This methodology will not help me to identities how many missing
-data I lost.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the Station Area.
+
+Limitations: This methodology will not help me to identities how many missing data I lost.
+
 Followup Steps: Try to find one more way to solve this problem.
 ;
 
-proc freq data = SF_FireStats_1617_analytic_file order=freq;
-    tables Station_Are;
+
+proc freq
+       data = SF_FireStats_1617_analytic_file noprint
+   ;
+   table
+       Fire_Prevention_District / out = Count list
+   ;
+
 run;
 
-title;
-footnote;
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
 
 
