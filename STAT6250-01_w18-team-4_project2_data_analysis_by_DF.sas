@@ -47,6 +47,24 @@ footnote3
 "Therefore, I put which Fire Prevention Districts have top 5 maximum number of inspections."
 ;
 
+*
+
+
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+Fire Prevention District.
+Limitations: This methodology is not a good way to show the results of the 
+frequency of fire prevention district because there are so many records.
+
+Followup Steps: Try one more way to filter something more.
+;
+
+proc freq data = SF_FireStats_1617_analytic_file order=freq;
+    tables Fire_Prevention_District;
+run;
+
+title;
+footnote;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -72,6 +90,25 @@ footnote3
 "However we are need more to focus on this question."
 ;
 
+*
+
+
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+Neighborhood_Distric.
+Limitations: This methodology can help me to list the frequency of the reuslt
+but still there will miss some results and show me what I do not need.
+
+Followup Steps: Try new methodology to narrow the missing gap.
+;
+
+proc freq data = SF_FireStats_1617_analytic_file order=freq;
+    tables Neighborhood_District;
+run;
+
+title;
+footnote;
+
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -96,3 +133,22 @@ footnote2
 footnote3
 "I will put top 10 station areas that has completed maximum number of inspections. "
 ;
+
+*
+
+
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+Station Area.
+Limitations: This methodology will not help me to identities how many missing
+data I lost.
+Followup Steps: Try to find one more way to solve this problem.
+;
+
+proc freq data = SF_FireStats_1617_analytic_file order=freq;
+    tables Station_Are;
+run;
+
+title;
+footnote;
+
+
