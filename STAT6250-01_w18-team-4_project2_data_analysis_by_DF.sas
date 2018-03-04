@@ -29,7 +29,7 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 
 title1
 'Research Question: Which top 5 Fire Prevention District where Fire Inspections
-took place in the year 2016'
+ took place in the year 2016'
 ;
 
 title2
@@ -39,12 +39,12 @@ Fire Inspections took place'
 
 footnote1
 'Based on the result district which is called 04 ranked first. This area
-happened 3765 times during 2016. It occupies almost 15% in total'
+ happened 3765 times during 2016. It occupies almost 15% in total.'
 ;
 
 footnote2
 'Rationale: This will help the team to know in 2016 which top 5 areas
-where Fire Inspections took place.'
+where  Fire Inspections took place.'
 ;
 
 footnote3
@@ -97,17 +97,17 @@ where Fire Inspections took place in the year 2017'
 
 title2
 'Rationale: This will help the team to know in 2017 which top 5 areas where 
-Fire Inspections took place.'
+ Fire Inspections took place.'
 ;
 
 footnote1
-"Based on the result district which is called 04 ranked first. This area
-happened 3765 times during 2016. It occupies almost 15% in total."
+"Based on the result district 04 ranked first again in 2017. This area
+ happened 3975 times. It occupies almost 16% in total."
 ;
 
 footnote2
 "Rationale: This will help the team to know in 2017 which top 5 areas
-where Fire Inspections took place."
+ where  Fire Inspections took place."
 ;
 
 footnote3
