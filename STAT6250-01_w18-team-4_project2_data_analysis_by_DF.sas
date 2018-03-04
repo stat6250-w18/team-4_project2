@@ -28,35 +28,37 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 
 title1
-'Research Question: Which top 5 Fire Prevention District has taken place 
-inspections?'
+'Research Question: Which top 5 Fire Prevention District where Fire Inspections
+took place in the year 2016'
 ;
 
 title2
-'Rationale: This will help the team to know which area has maximum number of inspections.'
+'Rationale: This will help the team to know in 2016 which top 5 areas where 
+Fire Inspections took place.'
 ;
 
 footnote1
-"Based on the result district 01 has the maximum number of inspections."
+"Based on the result district which is called 04 ranked first. This area
+happened 3765 times during 2016. It occupies almost 15% in total."
 ;
 
 footnote2
-"From this result, we should learn more areas about the maximum number of inspections."
+'Rationale: This will help the team to know in 2016 which top 5 areas
+where Fire Inspections took place."
 ;
 
 footnote3
-"Therefore, I put which Fire Prevention Districts have top 5 maximum number of inspections."
+"Therefore, I am considering coding to list similar results happend in 2017."
 ;
 
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the
-Fire Prevention District.
-Limitations: This methodology is not a good way to show the results of the 
-frequency of fire prevention district because there are so many records.
+Methodology: Use PROC FREQ with order=freq option to list the frequency
+of the Fire Prevention District.
+Limitations: This methodology is only show the cases happened in 2016.
 
-Followup Steps: Try one more way to filter something more.
+Followup Steps: try to code to list result happened in 2017.
 ;
 
 proc freq
@@ -88,23 +90,27 @@ run;
 *******************************************************************************;
 
 title1
-'Research Question: Which Neighborhood District is the most inspection?'
+'Research Question: Research Question: Which top 5 Fire Prevention District
+where Fire Inspections took place in the year 2017'
 ;
 
 title2
-'Rationale: This will help understand the most inspections based on Neighborhood District.'
+'Rationale: This will help the team to know in 2017 which top 5 areas where 
+Fire Inspections took place.'
 ;
 
 footnote1
-"The most neighborhood district is Financial District/South Beach. "
+"Based on the result district which is called 04 ranked first. This area
+happened 3765 times during 2016. It occupies almost 15% in total."
 ;
 
 footnote2
-"The result of the most neighborhood district looks too few."
+"Rationale: This will help the team to know in 2017 which top 5 areas
+where Fire Inspections took place."
 ;
 
 footnote3
-"However we are need more to focus on this question."
+"Therefore, I am considering coding how to compare these two result."
 ;
 
 *
@@ -112,18 +118,33 @@ footnote3
 
 Methodology: Use PROC FREQ with order=freq option to list the frequency of the
 Neighborhood_Distric.
-Limitations: This methodology can help me to list the frequency of the reuslt
-but still there will miss some results and show me what I do not need.
-
-Followup Steps: Try new methodology to narrow the missing gap.
+Limitations: This methodology is not a good way to compare results 
+by these two results.
+Followup Steps: try a comparing code different datasets.
 ;
 
-proc freq data = SF_FireStats_1617_analytic_file order=freq;
-    tables Neighborhood_District;
+proc freq
+       data = Work.Fire_Inspections_2017_raw noprint
+   ;
+   table
+       Fire_Prevention_District / out = Count list
+   ;
+
 run;
 
-title;
-footnote;
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
 
 
 
