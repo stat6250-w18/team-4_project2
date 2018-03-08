@@ -51,9 +51,10 @@ footnote3
 
 
 Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District.
+
 Limitations: This methodology is only show the cases happened in 2016.
 
-Followup Steps: try to code to list result happened in 2017.
+Followup Steps: try to code to list results happened in 2017.
 ;
 
 
@@ -168,8 +169,11 @@ footnote3
 *
 
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District happened in 2016 and 2017.
 
+Limitations: This methodology can only list top 5 results happened in 2016 and 2017.
+
+Followup Steps: To analyize the result to test whether combining datasets works or not.
 ;
 
 
