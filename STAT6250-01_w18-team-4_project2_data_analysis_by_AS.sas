@@ -63,13 +63,57 @@ Followup Steps: Lookout for missing data and handle it and test with ,
 bigger data set.
 ;
 
-proc freq data = SF_FireStats_1617_analytic_file order=freq;
-    tables Inspection_Address_Zipcode;
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Inspection_Address_Zipcode / out = Count list
+   ;
+       where 
+           not(missing(Inspection_Address_Zipcode));
+   ;
 run;
 
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
+
+proc freq
+       data = Work.Fire_Inspections_2017_raw noprint
+   ;
+   table
+       Inspection_Address_Zipcode / out = Count list
+   ;
+       where 
+           not(missing(Inspection_Address_Zipcode));
+   ;
+run;
+
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
 title;
 footnote;
-
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -108,10 +152,29 @@ Followup Steps: Lookout for missing data and handle it and test with ,
 much bigger data set.
 ;
 
-proc freq data = SF_FireStats_1617_analytic_file order=freq;
-    tables Inspection_Type;
+
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Inspection_Type / out = Count list
+   ;
+
 run;
 
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
 title;
 footnote;
 
@@ -153,9 +216,27 @@ Followup Steps: Lookout for missing data and handle it and test with ,
 much bigger data set.
 ;
 
-proc freq data = SF_FireStats_1617_analytic_file order=freq;
-    tables Battalion;
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Battalion / out = Count list
+   ;
+
 run;
 
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc print
+       data = Count_Desc (obs=5)
+   ;
+run;
 title;
 footnote;
