@@ -40,7 +40,7 @@
 
 [Data Dictionary] https://data.sfgov.org/api/views/wb4c-6hwj/files/eb85e2a6-5fc5-41bb-9ec1-844e5524f000?download=true&filename=FIR-0003_DataDictionary_fire-inspections.xlsx
 
-[Unique ID Schema] The column "Inspection_Number"ù is the primary key or unique ID, which also serves as the foreign key in datasets- Fire_Violations_2016 and Fire_Violations_2017.
+[Unique ID Schema] The column "Inspection_Number"¬ù is the primary key or unique ID, which also serves as the foreign key in datasets- Fire_Violations_2016 and Fire_Violations_2017.
 
 
 --
@@ -59,7 +59,7 @@
 
 [Data Dictionary] https://data.sfgov.org/api/views/4zuq-2cbe/files/a68685a7-41f8-432f-976d-aafb2711198e?download=true&filename=FIR-0006_DataDictionary_fire-violations.xlsx
 
-[Unique ID Schema] The column "Violation_ID"ù is the unique id.
+[Unique ID Schema] The column "Violation_ID"¬ù is the unique id.
 
 --
 
@@ -250,33 +250,33 @@ data SF_FireStats_1617_analytic_file;
         Inspection_Type
         Inspection_Address_Zipcode
         Battalion
-		Supervisor_District
+	Supervisor_District
         Address
         Violation_Id
         Violation_Item
         Zipcode
-		Inspection_Start_Date
-		Violation_Date
+	Inspection_Start_Date
+	Violation_Date
     ;
     keep
         Inspection_Number
         Inspection_Type
         Inspection_Address_Zipcode
         Battalion
-		Supervisor_District
+	Supervisor_District
         Address
         Violation_Id
         Violation_Item
         Zipcode
-		Inspection_Start_Date
-		Violation_Date
+	Inspection_Start_Date
+	Violation_Date
     ;
     merge
         Fire_Inspections_1617
         Fire_Violations_1617
     ;
     by
-	    Inspection_Number
+	Inspection_Number
     ;
 run;
 
