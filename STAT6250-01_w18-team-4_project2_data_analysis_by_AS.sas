@@ -39,7 +39,7 @@ title2
 ;
 
 footnote1
-"Based on the data zip code 94015 has the maximum number of inspections."
+"Based on the data zip code 94109 had the maximum number of inspections."
 ;
 
 footnote2
@@ -87,31 +87,6 @@ proc print
        data = Count_Desc (obs=5)
    ;
 run;
-
-proc freq
-       data = Work.Fire_Inspections_2017_raw noprint
-   ;
-   table
-       Inspection_Address_Zipcode / out = Count list
-   ;
-       where 
-           not(missing(Inspection_Address_Zipcode));
-   ;
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
-proc print
-       data = Count_Desc (obs=5)
-   ;
-run;
 title;
 footnote;
 
@@ -128,7 +103,7 @@ title2
 ;
 
 footnote1
-"As can be from the data ,this can be used to find common inspection types and its status."
+"Based on the data Inspection Type 31 is  commonly used ."
 ;
 
 footnote2
@@ -154,7 +129,7 @@ much bigger data set.
 
 
 proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
+       data = Work.Fire_Inspections_2017_raw noprint
    ;
    table
        Inspection_Type / out = Count list
@@ -192,7 +167,7 @@ title2
 ;
 
 footnote1
-"This analysis would help identify the battalion that has completed maximum number of inspections."
+"Based on the data Battalion 1 has completed the maximum number of inspections."
 ;
 
 footnote2
