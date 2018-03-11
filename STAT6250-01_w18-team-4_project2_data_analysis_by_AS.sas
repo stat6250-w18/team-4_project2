@@ -52,7 +52,6 @@ footnote3
 
 *
 
-
 Methodology: Use PROC FREQ with order=freq option to list the frequency of the
 zip codes.
 
@@ -63,32 +62,13 @@ Followup Steps: Lookout for missing data and handle it and test with ,
 bigger data set.
 ;
 
-proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
-   ;
-   table
-       Inspection_Address_Zipcode / out = Count list
-   ;
-       where 
-           not(missing(Inspection_Address_Zipcode));
-   ;
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
 proc print
-       data = Count_Desc (obs=5)
+       data = Inspection_Count_Desc (obs=5)
    ;
 run;
 title;
 footnote;
+
 
 *******************************************************************************;
 * Research Question Analysis Starting Point;
@@ -116,7 +96,6 @@ footnote3
 
 *
 
-
 Methodology: Use PROC FREQ with order=freq option to list the frequency of the
 inspection types.
 
@@ -127,27 +106,8 @@ Followup Steps: Lookout for missing data and handle it and test with ,
 much bigger data set.
 ;
 
-
-proc freq
-       data = Work.Fire_Inspections_2017_raw noprint
-   ;
-   table
-       Inspection_Type / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
 proc print
-       data = Count_Desc (obs=5)
+       data = Inspection_Type_Count_Desc (obs=5)
    ;
 run;
 title;
@@ -180,7 +140,6 @@ footnote3
 
 *
 
-
 Methodology: Use PROC FREQ with order=freq option to list the frequency of the
 Batallions.
 
@@ -191,26 +150,8 @@ Followup Steps: Lookout for missing data and handle it and test with ,
 much bigger data set.
 ;
 
-proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
-   ;
-   table
-       Battalion / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
 proc print
-       data = Count_Desc (obs=5)
+       data = Battalion_Count_Desc (obs=5)
    ;
 run;
 title;
