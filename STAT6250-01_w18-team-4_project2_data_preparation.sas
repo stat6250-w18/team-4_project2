@@ -281,7 +281,6 @@ data SF_FireStats_1617_analytic_file;
 run;
 
 
-
 ****************************SB data manipulation steps*************************;
 proc freq
        data = Work.Fire_Inspections_2016_raw noprint
@@ -324,21 +323,67 @@ proc sort
 run;
 
 
-
-
 ****************************AS data manipulation steps*************************;
 
-*Research Question 1;
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Inspection_Address_Zipcode / out = Count list
+   ;
+       where 
+           not(missing(Inspection_Address_Zipcode));
+   ;
+run;
 
-*Research Question 2;
+proc sort
+       data = Count
+       out = Inspection_Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
 
-*Research Question 3;
+
+proc freq
+       data = Work.Fire_Inspections_2017_raw noprint
+   ;
+   table
+       Inspection_Type / out = Count list
+   ;
+
+run;
+
+proc sort
+       data = Count
+       out = Inspection_Type_Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Battalion / out = Count list
+   ;
+
+run;
+
+proc sort
+       data = Count
+       out = Battalion_Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
 
 
 ****************************DF data manipulation steps*************************;
 
-*Research Question 1;
 
-*Research Question 2;
 
-*Research Question 3;
