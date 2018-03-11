@@ -36,7 +36,7 @@ title2
 ;
 
 footnote1
-"Based on the data top 5 zip codes have the maximum number of Fire inspections."
+"Based on the data the top 5 zip codes with the maximum number of Fire inspections are-"
 ;
 
 footnote2
@@ -44,7 +44,7 @@ footnote2
 ;
 
 footnote3
-"However, assuming there are no data issues underlying this analysis, futher check needs to be performed with a larger data set."
+"However, assuming there are no data issues underlying this analysis, further check needs to be performed with a larger data set."
 ;
 
 *
@@ -52,11 +52,7 @@ Note: This compares the column "Inspection_Address_Zipcode”
 from Fire_Inspections_2016 to the column of the same name from 
 Fire_Inspections_2016.
 
-Methodology: Use PROC FREQ to generate a frequency table based on the dataset
-on "Inspection_Address_Zipcode”. Then, use PROC SORT to temporarily sort 
-the data by descending count, in order to find the top three zip codes where 
-inspection took place. 
-Finally, use PROC PRINT to determine the top five zip codes where Fire 
+Methodology: Use PROC PRINT to determine the top five zip codes where Fire 
 inspection took place.
 
 Limitations: This methodology does not account for Zip Codes with missing data, 
@@ -66,58 +62,20 @@ Follow-up Steps: More carefully clean values in order to filter out any possible
 illegal values, and better handle missing data.
 ;
 
-proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
-   ;
-   table
-       Inspection_Address_Zipcode / out = Count list
-   ;
-       where 
-           not(missing(Inspection_Address_Zipcode));
+proc print
+       data = Count_Desc (obs=5)
    ;
 run;
 
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
+
 
 proc print
        data = Count_Desc (obs=5)
    ;
 run;
 
-proc freq
-       data = Work.Fire_Inspections_2017_raw noprint
-   ;
-   table
-       Inspection_Address_Zipcode / out = Count list
-   ;
-       where 
-           not(missing(Inspection_Address_Zipcode));
-   ;
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
-proc print
-       data = Count_Desc (obs=5)
-   ;
-run;
 title;
 footnote;
-
 
 
 *******************************************************************************;
@@ -150,28 +108,32 @@ from Fire_Inspections_2016 to the column of the same name from
 Fire_Inspections_2016.
 
 Methodology: Use PROC SQL to generate a table based on the dataset
-on "Billable_Inspection”.
+on "Billable_Inspections".
 
-Limitations: This methodology does not account for Billable Inspections with missing data, 
-nor does it attempt to validate the data in any way.
+Limitations: This methodology does not account for Billable Inspections with 
+missing data, nor does it attempt to validate the data in any way.
 
-Follow-up Steps: More carefully clean values in order to filter out any possible 
-illegal values, and better handle missing data.
+Follow-up Steps: More carefully clean values in order to filter out any 
+possible illegal values, and better handle missing data.
 ;
 
 proc sql;
-    select Billable_Inspection,
-	    count(*) as Fr
+    select '2016' as Year_of_Inspection,
+    round(count(Billable_Inspection)/(select count(Billable_Inspection) 
+    from Work.Fire_Inspections_2016_raw)*100,0.02) as PRCT 
+	    
 		from Work.Fire_Inspections_2016_raw
-		group by Billable_Inspection
-;
-run;
+		where Billable_inspection=1
+		
+	union
 
-proc sql;
-    select Billable_Inspection,
-	    count(*) as Fr
+    select '2017' as Year_of_Inspection,
+    round(count(Billable_Inspection)/(select count(Billable_Inspection) 
+    from Work.Fire_Inspections_2017_raw)*100,0.02) as PRCT
+	    
 		from Work.Fire_Inspections_2017_raw
-		group by Billable_Inspection
+		where Billable_inspection=1
+		
 ;
 run;
 
@@ -197,10 +159,10 @@ footnote2
 ;
 
 *
-Note: This compares the column “Violation Item” and “Supervisor District”.
+Note: This compares the column "Violation_Item"� and "Supervisor_District."
 
 Methodology: Use PROC SQL to generate a table based on the dataset
-on "ISupervisor_District” and "Violation_Item.
+on "Supervisor_District"� and "Violation_Item".
 
 Limitations: This methodology does not account for Zip Codes with missing data, 
 nor does it attempt to validate the data in any way.
@@ -210,26 +172,23 @@ illegal values, and better handle missing data.
 ;
 
 proc sql;
+    select '2016' as YEAR,
+    Supervisor_District, count(Violation_item) as VC, Violation_item
+        from Work.Fire_Violations_2016_raw
+            group by Supervisor_District,Violation_item
+            having VC=(select max(VC) from(select Supervisor_District,
+            count(Violation_item) as VC, Violation_item
+            from Work.Fire_Violations_2016_raw
+            group by Supervisor_District,Violation_item))
+union
 
- select 
-Supervisor_District
-,Violation_item
-,count(Violation_Item)as VIOLATION_COUNT
-	from Work.Fire_Violations_2016_raw
-		group by Violation_item,
-	Supervisor_District	
-;
+select '2017' as YEAR,
+    Supervisor_District, count(Violation_item) as VC, Violation_item
+        from Work.Fire_Violations_2017_raw
+            group by Supervisor_District,Violation_item
+            having VC=(select max(VC) from(select Supervisor_District,
+            count(Violation_item) as VC, Violation_item
+            from Work.Fire_Violations_2017_raw
+            group by Supervisor_District,Violation_item));
+
 run;
-
-proc sql;
-
- select 
-Supervisor_District
-,Violation_item
-,count(Violation_Item)as VIOLATION_COUNT
-	from Work.Fire_Violations_2017_raw
-		group by Violation_item,
-	Supervisor_District	
-;
-run;
-

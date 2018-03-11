@@ -283,12 +283,47 @@ run;
 
 
 ****************************SB data manipulation steps*************************;
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Inspection_Address_Zipcode / out = Count list
+   ;
+       where 
+           not(missing(Inspection_Address_Zipcode));
+   ;
+run;
 
-*Research Question 1;
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
 
-*Research Question 2;
+proc freq
+       data = Work.Fire_Inspections_2017_raw noprint
+   ;
+   table
+       Inspection_Address_Zipcode / out = Count list
+   ;
+       where 
+           not(missing(Inspection_Address_Zipcode));
+   ;
+run;
 
-*Research Question 3;
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+
 
 
 ****************************AS data manipulation steps*************************;
