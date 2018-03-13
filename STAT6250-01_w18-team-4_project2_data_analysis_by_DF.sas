@@ -50,7 +50,8 @@ footnote3
 ;
 
 *
-
+Note: This list top 5 results of column "Fire Prevention District" in 2016 to 
+show the observations and percentage.
 
 Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District.
 
