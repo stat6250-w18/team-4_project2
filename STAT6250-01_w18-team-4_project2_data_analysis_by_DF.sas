@@ -58,24 +58,6 @@ Followup Steps: try to code to list results happened in 2017.
 ;
 
 
-proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
-   ;
-   table
-       Fire_Prevention_District / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
 proc print
        data = Count_Desc (obs=5)
    ;
@@ -116,23 +98,6 @@ Limitations: This methodology is not a good way to compare results by these two 
 Followup Steps: try to code to combine different datasets.
 ;
 
-proc freq
-       data = Work.Fire_Inspections_2017_raw noprint
-   ;
-   table
-       Fire_Prevention_District / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
 
 proc print
        data = Count_Desc (obs=5)
@@ -177,27 +142,9 @@ Followup Steps: To analyize the result to test whether combining datasets works 
 ;
 
 
-proc freq
-       data = Fire_Inspections_1617 noprint
-   ;
-   table
-       Fire_Prevention_District / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
 
 proc print
        data = Count_Desc (obs=5)
    ;
 run;
-
 
