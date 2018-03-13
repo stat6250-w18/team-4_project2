@@ -5,10 +5,12 @@
 
 *
 This file uses the following analytic dataset to address fire inspections
-performed at given location by Fire department.
+performed at given location by Fire department
+
 Dataset Name: cde_2014_analytic_file created in external file
 STAT6250-01_w18-team-4_project2_data_preparation.sas, which is assumed to be
 in the same directory as this file
+
 See included file for dataset properties
 ;
 
