@@ -42,17 +42,19 @@ footnote1
 ;
 
 footnote2
-'This will help to know in 2016 what are the top 5 areas where Fire Inspections took place most.'
+'This will help to prepare the data what are the top 5 areas where Fire Inspections took place most in 2016.'
 ;
 
 footnote3
-'I would like to know in 2017 what are the top 5 areas where Fire Inspections took place most?'
+'However, assuming there are no data issues underlying this analysis.'
 ;
 
 *
-Note: This lists top 5 observations from column "Fire Prevention District" in 2016 and their percentages.
+Note: This lists top 5 observations from column "Fire Prevention District" in
+2016 and their percentages.
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+Fire Prevention District.
 
 Limitations: This methodology is only show the cases happened in 2016.
 
@@ -61,8 +63,7 @@ Followup Steps: try to code to list results happened in 2017.
 
 
 proc print
-       data = Count_Desc (obs=5)
-   ;
+       data = Count_Desc (obs=5);
 run;
 
 
@@ -87,25 +88,25 @@ footnote2
 ;
 
 footnote3
-"I am considering coding how to combine these two results together."
+"However, assuming there are no data issues underlying this analysis."
 ;
 
 *
-Note: This lists top 5 observations from column "Fire Prevention District" in 2017 and their percentages.
+Note: This lists top 5 observations from column "Fire Prevention District" 
+in 2017 and their percentages.
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the frequency of the Fire Prevention District.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+frequency of the Fire Prevention District.
 
-Limitations: This methodology is not a good way to compare results by these two results.
+Limitations: This methodology is not a good way to compare results by these
+two results.
 
-Followup Steps: try to code to combine different datasets.
+Followup Steps: try to code to combine different datasets and show results.
 ;
 
-
 proc print
-       data = Count_Desc (obs=5)
-   ;
+       data = Count_Desc (obs=5);
 run;
-
 
 
 *******************************************************************************;
@@ -130,23 +131,24 @@ footnote2
 ;
 
 footnote3
-"The result shows that merging two data sets works successfully. "
+"However, assuming there are no data issues underlying this analysis. How about the other ares where fire inspections took place both in 2016 and 2017"
 ;
 
 *
-Note: This compares observations from column "Fire Prevention District" in 2016 and 2017 and compares their percentages.
+Note: This compares observations from column "Fire Prevention District" in 2016
+and 2017 and compares their percentages.
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the Fire Prevention District happened in 2016 and 2017.
+Methodology: Use PROC FREQ with order=freq option to list the frequency of the
+Fire Prevention District happened in 2016 and 2017.
 
-Limitations: This methodology can only list top 5 results happened in 2016 and 2017.
+Limitations: This methodology can only list top 5 results happened in 2016
+and 2017.
 
-Followup Steps: To analyize the result to test whether combining datasets works or not.
+Followup Steps: To analyize the result to test whether combining datasets
+works or not.
 ;
 
-
-
 proc print
-       data = Count_Desc (obs=5)
-   ;
+       data = Count_Desc (obs=5);
 run;
 
