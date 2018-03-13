@@ -405,8 +405,56 @@ run;
 
 ****************************DF data manipulation steps*************************;
 
-*Research Question 1;
+proc freq
+       data = Work.Fire_Inspections_2016_raw noprint
+   ;
+   table
+       Fire_Prevention_District / out = Count list
+   ;
 
-*Research Question 2;
+run;
 
-*Research Question 3;
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc freq
+       data = Work.Fire_Inspections_2017_raw noprint
+   ;
+   table
+       Fire_Prevention_District / out = Count list
+   ;
+
+run;
+
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
+
+proc freq
+       data = Fire_Inspections_1617 noprint
+   ;
+   table
+       Fire_Prevention_District / out = Count list
+   ;
+
+run;
+
+proc sort
+       data = Count
+       out = Count_Desc
+   ;
+   by
+       descending count
+   ;
+run;
