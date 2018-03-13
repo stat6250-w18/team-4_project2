@@ -10,7 +10,8 @@
 
 [Dataset 1 Name] Fire_Inspections_2016
 
-[Dataset Description] Information on Fire Inspections performed at a given location by the Fire Department.
+[Dataset Description] Information on Fire Inspections performed at a given
+location by the Fire Department.
 
 [Experimental Unit Description] Fire Inspections for the year 2016
 
@@ -22,13 +23,16 @@
 
 [Data Dictionary] https://data.sfgov.org/api/views/wb4c-6hwj/files/eb85e2a6-5fc5-41bb-9ec1-844e5524f000?download=true&filename=FIR-0003_DataDictionary_fire-inspections.xlsx 
 
-[Unique ID Schema] The column "Inspection_Number" is the primary key or unique ID, which also serves as the foreign key in datasets- Fire_Violations_2016 and Fire_Violations_2017. 
+[Unique ID Schema] The column "Inspection_Number" is the primary key or
+unique ID, which also serves as the foreign key in datasets- 
+Fire_Violations_2016 and Fire_Violations_2017. 
 
 --
 
 [Dataset 2 Name] Fire_Inspections_2017
 
-[Dataset Description] Information on Fire Inspections performed at a given location by the Fire Department.
+[Dataset Description] Information on Fire Inspections performed at a given
+location by the Fire Department.
 
 [Experimental Unit Description] Fire Inspections for the year 2017
 
@@ -40,14 +44,17 @@
 
 [Data Dictionary] https://data.sfgov.org/api/views/wb4c-6hwj/files/eb85e2a6-5fc5-41bb-9ec1-844e5524f000?download=true&filename=FIR-0003_DataDictionary_fire-inspections.xlsx
 
-[Unique ID Schema] The column "Inspection_Number" is the primary key or unique ID, which also serves as the foreign key in datasets- Fire_Violations_2016 and Fire_Violations_2017.
+[Unique ID Schema] The column "Inspection_Number" is the primary key or 
+unique ID, which also serves as the foreign key in datasets- 
+Fire_Violations_2016 and Fire_Violations_2017.
 
 
 --
 
 [Dataset 3 Name] Fire_Violations_2016
 
-[Dataset Description] Information on Fire Violations issued by the Fire Department at a given location.
+[Dataset Description] Information on Fire Violations issued by the
+Fire Department at a given location.
 
 [Experimental Unit Description] Fire Violations for the year 2016
 
@@ -65,7 +72,8 @@
 
 [Dataset 4 Name] Fire_Violations_2017
 
-[Dataset Description] Information on Fire Violations issued by the Fire Department at a given location.
+[Dataset Description] Information on Fire Violations issued by the
+Fire Department at a given location.
 
 [Experimental Unit Description] Fire Violations for the year 2017
 
