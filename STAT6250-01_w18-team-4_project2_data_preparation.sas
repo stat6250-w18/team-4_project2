@@ -468,6 +468,7 @@ proc freq
 run;
 
 *use sort command to sort data count and output by count_Desc
+;
 proc sort
        data = Count
        out = Count_Desc
