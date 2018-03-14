@@ -412,7 +412,8 @@ run;
 
 
 ****************************DF data manipulation steps*************************;
-
+*use proc freq to input data from raw dataset 2016 and create table.
+;
 proc freq
        data = Work.Fire_Inspections_2016_raw noprint
    ;
@@ -422,6 +423,7 @@ proc freq
 
 run;
 
+*use sort command to sort data count and output by count_Desc
 proc sort
        data = Count
        out = Count_Desc
@@ -431,6 +433,8 @@ proc sort
    ;
 run;
 
+*use proc freq to input data from raw dataset 2017 and create table.
+;
 proc freq
        data = Work.Fire_Inspections_2017_raw noprint
    ;
@@ -440,6 +444,8 @@ proc freq
 
 run;
 
+*use sort command to sort data count and output by count_Desc
+;
 proc sort
        data = Count
        out = Count_Desc
@@ -449,6 +455,9 @@ proc sort
    ;
 run;
 
+*use proc freq to input data from raw dataset 2016 and 2017 
+and create table.
+;
 proc freq
        data = Fire_Inspections_1617 noprint
    ;
@@ -458,6 +467,7 @@ proc freq
 
 run;
 
+*use sort command to sort data count and output by count_Desc
 proc sort
        data = Count
        out = Count_Desc
