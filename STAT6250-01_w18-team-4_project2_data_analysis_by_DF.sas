@@ -105,7 +105,7 @@ Followup Steps: try to code to combine different datasets and show results.
 ;
 
 proc print
-       data = Count_Desc (obs=5);
+       data = Count1_Desc (obs=5);
 run;
 
 
@@ -149,6 +149,6 @@ works or not.
 ;
 
 proc print
-       data = Count_Desc (obs=5);
+       data = Count2_Desc (obs=5);
 run;
 
