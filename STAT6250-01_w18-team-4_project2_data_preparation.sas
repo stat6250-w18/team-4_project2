@@ -329,9 +329,22 @@ run;
 
 
 ****************************AS data manipulation steps*************************;
-*use proc freq to input data from Fire Inspections dataset 2016 and create table.
+*
+The first research question asks about the top 5 zipcode areas where
+inspections have been done in 2016.
+The reason for question 2 is to prepare a output for testing whether the
+combining table which is created by sql work or not. The second resarch question
+is similar to the first question to show the top 5 fire zipcode areas in 
+2017.
+Third question is to show the batallion and count the results that happened both 
+in 2016 and 2017. 
 ;
 
+*
+Step- By using PROC FREQ, producing frequency table for top 5 Fire Inspection
+zipcode areas where fire have happened in 2016 .PROC FREQ is used so as to view the
+areas in order.
+;
 proc freq
        data = Work.Fire_Inspections_2016_raw noprint
    ;
@@ -343,7 +356,10 @@ proc freq
    ;
 run;
 
-*use sort command to sort data count and output by count_Desc
+*
+The reason why to use sort command is to sort data count which is created above
+and make the outcome looks more meaningful.By using decend count, the output
+can be shown by highest to lowest.
 ;
 proc sort
        data = Count
@@ -354,7 +370,9 @@ proc sort
    ;
 run;
 
-*use proc freq to input data from Fire Inspections dataset 2017 and create table.
+*
+Step- By using PROC FREQ, producing frequency table for top 5 Fire Inspections
+Type  in 2017 .PROC FREQ is used so as to view the areas in order
 ;
 proc freq
        data = Work.Fire_Inspections_2017_raw noprint
@@ -365,7 +383,10 @@ proc freq
 
 run;
 
-*use sort command to sort data count and output by count_Desc
+*
+The reason why to use sort command is to sort data count which is created above
+and make the outcome looks more meaningful.By using decend count, the output
+can be shown by highest to lowest.
 ;
 proc sort
        data = Count
@@ -376,10 +397,12 @@ proc sort
    ;
 run;
 
-*use proc freq to input data from Fire Inspections dataset 2016 and create table.
+*
+Step- By using PROC FREQ, producing frequency table for top 5 Fire Batallion
+Type  in 2016 and 2017 .PROC FREQ is used so as to view the data in order.
 ;
 proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
+       data = Fire_Inspections_1617 noprint
    ;
    table
        Battalion / out = Count list
@@ -387,7 +410,10 @@ proc freq
 
 run;
 
-*use sort command to sort data count and output by count_Desc
+*
+The reason why to use sort command is to sort data count which is created above
+and make the outcome looks more meaningful.By using decend count, the output
+can be shown by highest to lowest.
 ;
 proc sort
        data = Count
