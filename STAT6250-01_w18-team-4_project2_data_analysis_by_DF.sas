@@ -49,7 +49,7 @@ footnote3
 
 *
 
-Note: This lists top 5 observations from column "Fire Prevention District" in
+Note: This lists top 5 observations from column Fire Prevention District in
 2016 and their percentages.These five rows are ready for comparing.
 
 Methodology: Use proc print to show the results. Also, some codes about PROC
@@ -84,15 +84,15 @@ title2
 ;
 
 footnote1
-"Based on the result district 04 ranked first again in 2017. This area happened 3975 times. It occupies 16.4480% in total."
+'Based on the result district 04 ranked first again in 2017. This area happened 3975 times. It occupies 16.4480% in total.'
 ;
 
 footnote2
-"This will help to know only in 2017 where Fire Inspections took place most."
+'This will help to know only in 2017 where Fire Inspections took place most.'
 ;
 
 footnote3
-"These two results are ready for comparing for my purpose to test combining datasets."
+'These two results are ready for comparing for my purpose to test combining datasets.'
 ;
 
 *
@@ -128,20 +128,20 @@ title1
 ;
 
 title2
-"Rationale: This analysis would help to know what are the top 5 areas where fire inspections took place both in 2016 and 2017."
+'Rationale: This analysis would help to know what are the top 5 areas where fire inspections took place both in 2016 and 2017.'
 ;
 
 footnote1
-"We can see the 04 district took place most which is 7740. The number comes from results of first and second questions by adding 3765 and 3975."
+'We can see the 04 district took place most which is 7740. The number comes from results of first and second questions by adding 3765 and 3975.'
 ;
 
 footnote2
-"We can see the 01w district rank second which is 4297. The number also comes from results of first and second questions by adding 2179 and 2118."
+'We can see the 01w district rank second which is 4297. The number also comes from results of first and second questions by adding 2179 and 2118.'
 
 ;
 
 footnote3
-"These results show that combining does work due to the values in the chart."
+'These results show that combining does work due to the values in the chart.'
 ;
 
 *
