@@ -48,12 +48,13 @@ footnote3
 ;
 
 
-*Note: This lists top 5 observations from column Fire Prevention District in
+*
+Note: This lists top 5 observations from column Fire Prevention District in
 2016 and their percentages.These five rows are ready for comparing.
 
 Methodology: Use proc print to show the results. Also, some codes about proc
-freq with order=freq option to list the frequency of the Fire Prevention
-District. Also, proc sort to sort results are done in data prep file.
+freq with order equals freq option to list the frequency of the Fire Prevention
+District. Also, use proc sort to sort results are done in data prep file.
 
 Limitations: This methodology is only show 5 cases happened in 2016. There
 are many records may need to be compared. 
@@ -99,7 +100,7 @@ Note: This lists top 5 observations from column Fire Prevention District
 in 2017 and their percentages.
 
 Methodology: Use proc print to show the results. Also, some codes about PROC
-FREQ with order=freq option to list the frequency of the Fire Prevention
+FREQ with order equals freq option to list the frequency of the Fire Prevention
 District. Also, PROC SORT to sort results are done in data prep file.
 
 Limitations: This methodology is not a good way to compare results by these
