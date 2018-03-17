@@ -441,7 +441,7 @@ proc sort
        out = Count_Desc
    ;
    by
-       descending count
+       descending Count
    ;
 run;
 
@@ -451,7 +451,7 @@ proc freq
        data = Work.Fire_Inspections_2017_raw noprint
    ;
    table
-       Fire_Prevention_District / out = Count list1
+       Fire_Prevention_District / out = Count1 list
    ;
 
 run;
@@ -460,7 +460,7 @@ run;
 ;
 proc sort
        data = Count1
-       out = Count_Desc1
+       out = Count1_Desc
    ;
    by
        descending Count1
@@ -474,7 +474,7 @@ proc freq
        data = Fire_Inspections_1617 noprint
    ;
    table
-       Fire_Prevention_District / out = Count list2
+       Fire_Prevention_District / out = Count2 list
    ;
 
 run;
@@ -483,7 +483,7 @@ run;
 ;
 proc sort
        data = Count2
-       out = Count_Desc2
+       out = Count2_Desc
    ;
    by
        descending Count2
