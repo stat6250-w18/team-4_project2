@@ -39,7 +39,7 @@ title2
 ;
 
 footnote1
-"Based on the data zip code 94109 had the maximum number of inspections."
+"Based on the data zip code 94109 had the maximum number of inspections. It has 2584 observations and 10.46 % frequency"
 ;
 
 footnote2
@@ -63,8 +63,9 @@ bigger data set.
 ;
 
 proc print
-       data = Inspection_Count_Desc (obs=5)
+       data = Inspection_Count_Desc (obs=5) label
    ;
+   label COUNT="Num of Observations";
 run;
 title;
 footnote;
@@ -83,7 +84,7 @@ title2
 ;
 
 footnote1
-"Based on the data Inspection Type 31 is  commonly used ."
+"Based on the data Inspection Type 31 is  commonly used .It has 6137 observations and 25.35 % total frequency"
 ;
 
 footnote2
@@ -107,8 +108,9 @@ much bigger data set.
 ;
 
 proc print
-       data = Inspection_Type_Count_Desc (obs=5)
+       data = Inspection_Type_Count_Desc (obs=5) label
    ;
+   label COUNT="Num of Observations";
 run;
 title;
 footnote;
@@ -127,7 +129,7 @@ title2
 ;
 
 footnote1
-"Based on the data Battalion 1 has completed the maximum number of inspections."
+"Based on the data Battalion 1 has completed the maximum number of inspections.It has completed 11815 observations at 24% frequency"
 ;
 
 footnote2
@@ -151,8 +153,9 @@ much bigger data set.
 ;
 
 proc print
-       data = Battalion_Count_Desc (obs=5)
+       data = Battalion_Count_Desc (obs=5) label
    ;
+   label COUNT="Num of Observations";
 run;
 title;
 footnote;
