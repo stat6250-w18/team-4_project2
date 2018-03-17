@@ -48,6 +48,7 @@ footnote3
 ;
 
 *
+
 Note: This lists top 5 observations from column "Fire Prevention District" in
 2016 and their percentages.These five rows are ready for comparing.
 
@@ -95,7 +96,8 @@ footnote3
 ;
 
 *
-Note: This lists top 5 observations from column "Fire Prevention District" 
+
+Note: This lists top 5 observations from column Fire Prevention District 
 in 2017 and their percentages.
 
 Methodology: Use proc print to show the results. Also, some codes about PROC
@@ -143,7 +145,8 @@ footnote3
 ;
 
 *
-Note: This compares observations from column "Fire Prevention District" in 2016
+
+Note: This compares observations from column Fire Prevention District in 2016
 and 2017 and compares their percentages.
 
 Methodology: Use proc print to show the table results. The combined table
