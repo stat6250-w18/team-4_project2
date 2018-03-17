@@ -44,18 +44,20 @@ footnote2
 ;
 
 footnote3
-'My purpose base on these three research questions is to test whether my combining two datasets does work or not. Therefore, I need to show what happened in 2017 further.'  .'
-;
+'My purpose base on these three research questions is to test whether my combining two datasets does work or not. Therefore, I need to show what happened in 2017 further.';
 
 
 *
 Note: This lists top 5 observations from column Fire Prevention District in
 2016 and their percentages.These five rows are ready for comparing.
-Methodology: Use proc print to show the results. Also, some codes about proc
+
+Methodology: Use proc print to show the results.Also,some codes about proc
 freq with order equals freq option to list the frequency of the Fire Prevention
-District. Also, use proc sort to sort results are done in data prep file.
+District.Also,use proc sort to sort results are done in data prep file.
+
 Limitations: This methodology is only show 5 cases happened in 2016. There
-are many records may need to be compared. 
+are many records may need to be compared.
+
 Followup Steps: try to code to list the top 5 areas where Fire Inspections
 took place most in 2017. Use similar code to do the next research question
 for comparsion.
@@ -72,7 +74,7 @@ footnote;
 *******************************************************************************;
 
 title1
-'Research Question: What are the top 5 Fire Prevention District where Fire Inspections took place in the year 2017'
+'Research Question: What are the top 5 Fire Prevention District where Fire Inspections took place in the year 2017.'
 ;
 
 title2
