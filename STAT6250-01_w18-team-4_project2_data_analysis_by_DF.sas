@@ -47,8 +47,8 @@ footnote3
 'My purpose base on these three research questions is to test whether my combining two datasets does work or not. Therefore, I need to show what happened in 2017 further.'  .'
 ;
 
-*
-Note: This lists top 5 observations from column Fire Prevention District in
+
+*Note: This lists top 5 observations from column Fire Prevention District in
 2016 and their percentages.These five rows are ready for comparing.
 
 Methodology: Use proc print to show the results. Also, some codes about proc
