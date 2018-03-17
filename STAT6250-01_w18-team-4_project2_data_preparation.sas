@@ -248,6 +248,21 @@ proc sql;
     ;
 quit;
 
+data Fire_Inspections_1617;
+    set Fire_Inspections_1617;
+    new = Put(Violation_Number, 8.);
+    drop Violation_Number;
+    rename new=Violation_Number
+    Inspection_Type_Description=Inspection_Type;
+run;
+proc sort 
+    data=Fire_Violations_1617; 
+    by Inspection_Number; 
+run;
+proc sort 
+    data=Fire_Inspections_1617; 
+    by Inspection_Number; 
+run;
 * build analytic dataset from raw datasets with the least number of columns and
 minimal cleaning/transformation needed to address research questions in
 corresponding data-analysis files;
