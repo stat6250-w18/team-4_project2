@@ -48,7 +48,7 @@ footnote3
 ;
 
 *
-Note: This compares the column "Inspection_Address_Zipcodeâ€ 
+Note: This compares the column "Inspection_Address_Zipcode" 
 from Fire_Inspections_2016 to the column of the same name from 
 Fire_Inspections_2016.
 
@@ -96,7 +96,7 @@ footnote3
 ;
 
 *
-Note: This compares the column "Billable_Inspectionsâ€ 
+Note: This compares the column "Billable_Inspections" 
 from Fire_Inspections_2016 to the column of the same name from 
 Fire_Inspections_2016.
 
@@ -152,10 +152,10 @@ footnote2
 ;
 
 *
-Note: This compares the column "Violation_Item" and "Supervisor_District."
+Note: This compares the column "Violation_Item" and "Supervisor_District."
 
 Methodology: Use PROC SQL to generate a table based on the dataset
-on "Supervisor_District" and "Violation_Item".
+on "Supervisor_District" and "Violation_Item".
 
 Limitations: This methodology does not account for Zip Codes with missing data, 
 nor does it attempt to validate the data in any way.
