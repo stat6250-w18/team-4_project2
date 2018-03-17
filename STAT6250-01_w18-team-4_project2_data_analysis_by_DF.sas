@@ -64,7 +64,6 @@ took place most in 2017. Use similar code to do the next research question
 for comparsion.
 ;
 
-
 proc print
        data = Count_Desc (obs=5);
 run;
