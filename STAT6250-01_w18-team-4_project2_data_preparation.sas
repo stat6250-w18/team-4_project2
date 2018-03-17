@@ -292,11 +292,25 @@ run;
 
 ****************************SB data manipulation steps*************************;
 
+*
+The first research question asks about the top 5 address zipcodes where
+inspections have been done.
+Second question finds out the total inspections that were billed during each 
+year, and
+Third question asks the item that has violated maximum in any supervisor
+district in both the years.
+;
+
+*
+Step- By using PROC FREQ, producing frequency table for top 5 address zip codes.
+PROC FREQ is used so as to view the adress zip codes in descending order.
+;
+
 proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
+       data = SF_FireStats_1617_analytic_file noprint
    ;
    table
-       Inspection_Address_Zipcode / out = Count list
+       Inspection_Address_Zipcode / out = Count_Inspection_Desc list
    ;
        where 
            not(missing(Inspection_Address_Zipcode));
@@ -304,50 +318,14 @@ proc freq
 run;
 
 proc sort
-       data = Count
-       out = Inspection_Count_Desc
+       data = Count_Inspection_Desc
+       out = Count_Inspection_Desc
    ;
    by
        descending count
    ;
 run;
 
-
-proc freq
-       data = Work.Fire_Inspections_2017_raw noprint
-   ;
-   table
-       Inspection_Type / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Inspection_Type_Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
-
-proc freq
-       data = Work.Fire_Inspections_2016_raw noprint
-   ;
-   table
-       Battalion / out = Count list
-   ;
-
-run;
-
-proc sort
-       data = Count
-       out = Battalion_Count_Desc
-   ;
-   by
-       descending count
-   ;
-run;
 
 
 ****************************AS data manipulation steps*************************;
