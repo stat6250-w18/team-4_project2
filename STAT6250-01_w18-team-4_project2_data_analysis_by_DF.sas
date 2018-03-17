@@ -42,23 +42,27 @@ footnote1
 ;
 
 footnote2
-'This will help to prepare the data what are the top 5 areas where Fire Inspections took place most in 2016.'
+'This will help to prepare the result about what are the top 5 areas where Fire Inspections took place most in 2016.'
 ;
 
 footnote3
-'However, assuming there are no data issues underlying this analysis.'
+'My purpose base on these three research questions is to test whether my combining two datasets does work or not. Therefore, I need to show what happened in 2017 further.'  .'
 ;
 
 *
 Note: This lists top 5 observations from column "Fire Prevention District" in
-2016 and their percentages.
+2016 and their percentages.These five rows are ready for comparing.
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the
-Fire Prevention District.
+Methodology: Use proc print to show the results. Also, some codes about PROC
+FREQ with order=freq option to list the frequency of the Fire Prevention
+District. Also, PROC SORT to sort results are done in data prep file.
 
-Limitations: This methodology is only show the cases happened in 2016.
+Limitations: This methodology is only show 5 cases happened in 2016. There
+are many records may need to be compared. 
 
-Followup Steps: try to code to list results happened in 2017.
+Followup Steps: try to code to list the top 5 areas where Fire Inspections
+took place most in 2017. Use similar code to do the next research question
+for comparsion.
 ;
 
 
@@ -88,20 +92,24 @@ footnote2
 ;
 
 footnote3
-"However, assuming there are no data issues underlying this analysis."
+"These two results are ready for comparing for my purpose to test combining datasets."
 ;
 
 *
 Note: This lists top 5 observations from column "Fire Prevention District" 
 in 2017 and their percentages.
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the
-frequency of the Fire Prevention District.
+Methodology: Use proc print to show the results. Also, some codes about PROC
+FREQ with order=freq option to list the frequency of the Fire Prevention
+District. Also, PROC SORT to sort results are done in data prep file.
 
 Limitations: This methodology is not a good way to compare results by these
 two results.
 
-Followup Steps: try to code to combine different datasets and show results.
+Followup Steps: In next reserch question, I will proc print the results for
+where Fire Inspections took place in both 2016 and 2017. The comined table
+has been ready in prep.sas file. Its name is called table Fire_Inspections
+_1617 which is created by proc sql.
 ;
 
 proc print
@@ -131,21 +139,26 @@ footnote2
 ;
 
 footnote3
-"However, assuming there are no data issues underlying this analysis. How about the other ares where fire inspections took place both in 2016 and 2017"
+"These results show that combining does work due to the values in the chart."
 ;
 
 *
 Note: This compares observations from column "Fire Prevention District" in 2016
 and 2017 and compares their percentages.
 
-Methodology: Use PROC FREQ with order=freq option to list the frequency of the
-Fire Prevention District happened in 2016 and 2017.
+Methodology: Use proc print to show the table results. The combined table
+has been ready in prep.sas file. Its name is called table Fire_Inspections
+_1617 which is created by proc sql.
 
 Limitations: This methodology can only list top 5 results happened in 2016
-and 2017.
+and 2017. Also, from these 5 rows, we can not get some statistic meanings,
+for example, why the place ranked in 3rd position in 2016 and 5th position
+in 2017 goes to 4 position after combining.
 
-Followup Steps: To analyize the result to test whether combining datasets
-works or not.
+Followup Steps: Based on the limitaion above, we need more statistic knowlege
+to look for a method to make the questions more meaningful. Or maybe use more
+reference objects such as other columns in row datasets to help to get a 
+better conclusion.
 ;
 
 proc print
