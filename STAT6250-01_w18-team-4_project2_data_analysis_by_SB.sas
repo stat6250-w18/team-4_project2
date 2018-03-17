@@ -62,9 +62,30 @@ Follow-up Steps: More carefully clean values in order to filter out any possible
 illegal values, and better handle missing data.
 ;
 
-proc print
-       data = Count_Inspection_Desc (obs=5)
-   ;
+PROC SQL(OUTOBS=5);
+create table Work.temp_ta as
+select '2016' as Year, Inspection_Address_Zipcode,
+    count(Inspection_Address_Zipcode)as Count_Zip
+    from Work.Fire_Inspections_2016_raw
+	group by Inspection_Address_Zipcode
+	order by Count_Zip desc
+	;
+run;
+
+PROC SQL (outobs=5);
+create table Work.temp_tb as 
+select '2017' as Year, Inspection_Address_Zipcode,
+    count(Inspection_Address_Zipcode)as Count_Zip
+    from Work.Fire_Inspections_2017_raw
+	group by Inspection_Address_Zipcode
+	order by Count_Zip desc
+	;
+run;
+
+PROC SQL;
+    select * from Work.temp_ta
+    union
+    select * from Work.temp_tb;
 run;
 
 title;
