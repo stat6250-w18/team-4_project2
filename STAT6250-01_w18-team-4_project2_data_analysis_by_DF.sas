@@ -64,11 +64,16 @@ for comparsion.
 ;
 
 data Count_Desc;
-set sashelp.class(drop=Obs);
+      set PERCENT;
+      array _nums {*} _numeric_;
+      do i = 1 to dim(_nums);
+      _nums{i} = round(_nums{i},.01);
+end;
+drop i;
 run;
 
 proc print
-       data = Count_Desc (obs=5) label;
+       data = Count_Desc (obs=5) label Noobs;
        label COUNT="Num of Observations";
        label PERCENT="Num of Observations Occupy Total Amount";
 
