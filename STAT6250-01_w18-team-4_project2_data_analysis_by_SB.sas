@@ -4,11 +4,13 @@
 *******************************************************************************;
 
 *
-This file uses the following analytic dataset to address fire inspections
+This file uses the following dataset to address fire inspections
 performed at given location by Fire department.
-Dataset Name: cde_2014_analytic_file created in external file
+
+Dataset Name: SF_FireStats_1617_analytic_file created in external file
 STAT6250-01_w18-team-4_project2_data_preparation.sas, which is assumed to be
 in the same directory as this file
+
 See included file for dataset properties
 ;
 
@@ -18,9 +20,9 @@ See included file for dataset properties
 X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPATH))-%length(%sysget(SAS_EXECFILENAME))))""";
 
 
-* load external file that generates analytic datasets cde_2014_analytic_file,
-  cde_2014_analytic_file_sort_frpm, and cde_2014_analytic_file_sort_sat;
+* load external file that generates analytic datasets SF_FireStats_1617_analytic_file;
 %include '.\STAT6250-01_w18-team-4_project2_data_preparation.sas';
+
 
 
 *******************************************************************************;
@@ -70,10 +72,37 @@ Follow-up Steps: More carefully clean values in order to filter out any possible
 illegal values, and better handle missing data.
 ;
 
+PROC SQL outobs=5;
+    create table Work.temp_ta as
+        select '2016' as Year, 
+            Inspection_Address_Zipcode,
+            count(Inspection_Address_Zipcode)as Count_Zip
+        from Work.Fire_Inspections_2016_raw
+	    group by Inspection_Address_Zipcode
+	    order by Count_Zip desc
+        ;
+quit;
 
+PROC SQL outobs=5;
+    create table Work.temp_tb as 
+        select '2017' as Year, 
+	        Inspection_Address_Zipcode,
+            count(Inspection_Address_Zipcode)as Count_Zip
+        from Work.Fire_Inspections_2017_raw
+	    group by Inspection_Address_Zipcode
+	    order by Count_Zip desc
+        ;
+quit;
+
+PROC SQL;
+    select * from Work.temp_ta
+    union
+    select * from Work.temp_tb;
+quit;
 
 title;
 footnote;
+
 
 
 *******************************************************************************;
@@ -121,23 +150,22 @@ possible illegal values, and better handle missing data.
 
 proc sql;
     select '2016' as Year_of_Inspection,
-    round(count(Billable_Inspection)/(select count(Billable_Inspection) 
+        round(count(Billable_Inspection)/(select count(Billable_Inspection) 
     from Work.Fire_Inspections_2016_raw)*100,0.02) as PRCT 
-	    
-		from Work.Fire_Inspections_2016_raw
-		where Billable_inspection=1
+	from Work.Fire_Inspections_2016_raw
+    where Billable_inspection=1
 		
 	union
 
     select '2017' as Year_of_Inspection,
-    round(count(Billable_Inspection)/(select count(Billable_Inspection) 
-    from Work.Fire_Inspections_2017_raw)*100,0.02) as PRCT
-	    
-		from Work.Fire_Inspections_2017_raw
-		where Billable_inspection=1
+        round(count(Billable_Inspection)/(select count(Billable_Inspection) 
+    from Work.Fire_Inspections_2017_raw)*100,0.02) as PRCT 
+	from Work.Fire_Inspections_2017_raw
+    where Billable_inspection=1
 		
 ;
-run;
+quit;
+
 
 
 *******************************************************************************;
@@ -183,22 +211,33 @@ illegal values, and better handle missing data.
 
 proc sql;
     select '2016' as YEAR,
-    Supervisor_District, count(Violation_item) as VC, Violation_item
-        from Work.Fire_Violations_2016_raw
-            group by Supervisor_District,Violation_item
-            having VC=(select max(VC) from(select Supervisor_District,
-            count(Violation_item) as VC, Violation_item
-            from Work.Fire_Violations_2016_raw
-            group by Supervisor_District,Violation_item))
-union
+        Supervisor_District,
+        count(Violation_item) as VC,
+        Violation_item
+    from Work.Fire_Violations_2016_raw
+    group by Supervisor_District,
+	         Violation_item
+    having VC=(select max(VC) from
+        (select Supervisor_District,
+             count(Violation_item) as VC,
+             Violation_item
+         from Work.Fire_Violations_2016_raw
+         group by Supervisor_District,Violation_item))
 
-select '2017' as YEAR,
-    Supervisor_District, count(Violation_item) as VC, Violation_item
+    union
+
+    select '2017' as YEAR,
+        Supervisor_District,
+        count(Violation_item) as VC,
+        Violation_item
         from Work.Fire_Violations_2017_raw
-            group by Supervisor_District,Violation_item
-            having VC=(select max(VC) from(select Supervisor_District,
-            count(Violation_item) as VC, Violation_item
+        group by Supervisor_District,
+                 Violation_item
+        having VC=(select max(VC) from
+            (select Supervisor_District,
+                count(Violation_item) as VC, 
+                Violation_item
             from Work.Fire_Violations_2017_raw
             group by Supervisor_District,Violation_item));
 
-run;
+quit;
