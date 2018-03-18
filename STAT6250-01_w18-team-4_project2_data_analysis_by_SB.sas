@@ -30,11 +30,11 @@ X "cd ""%substr(%sysget(SAS_EXECFILEPATH),1,%eval(%length(%sysget(SAS_EXECFILEPA
 *******************************************************************************;
 
 title1
-'Research Question: What are the top 5 address Zip Codes where Fire Inspections took place in the year 2016 and again in 2017?'
+"Research Question: What are the top 5 address Zip Codes where Fire Inspections took place in the year 2016 and again in 2017?"
 ;
 
 title2
-'Rationale: This should help compare the Zip codes for both the years, where after the inspections, corrective actions were taken or not.'
+"Rationale: This should help compare the Zip codes for both the years, where after the inspections, corrective actions were taken or not."
 ;
 
 footnote1
@@ -42,7 +42,7 @@ footnote1
 ;
 
 footnote2
-"As can be seen in the output table, this result will help us to know if there is a growth in number of inspections, what is the reason behind it? 
+"As can be seen in the output table, this result will help us to know if there is a growth in number of inspections, what is the reason behind it?" 
 ;
 
 footnote3
@@ -110,11 +110,11 @@ footnote;
 *******************************************************************************;
 
 title1
-'Research Question: What percentage of inspections are billable for both the years?'
+"Research Question: What percentage of inspections are billable for both the years?"
 ;
 
 title2
-'Rationale: This would help managing the number of inspectors in a team.'
+"Rationale: This would help managing the number of inspectors in a team."
 ;
 
 footnote1
@@ -193,14 +193,14 @@ footnote3
 ;
 
 footnote4
-"However,since this is a subset of data ,we will need to iteratively test with larger data sets before concluding "
+"However,since this is a subset of data ,we will need to iteratively test with larger data sets before concluding."
 ;
 
 *
-Note: This compares the column "Violation_Item" and "Supervisor_District."
+Note: This compares the column Violation_Item and Supervisor_District.
 
 Methodology: Use PROC SQL to generate a table based on the dataset
-on "Supervisor_District" and "Violation_Item".
+on Supervisor_District and Violation_Item.
 
 Limitations: This methodology does not account for Zip Codes with missing data, 
 nor does it attempt to validate the data in any way.
