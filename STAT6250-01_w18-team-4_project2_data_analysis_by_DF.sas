@@ -65,6 +65,9 @@ for comparsion.
 
 proc print
        data = Count_Desc (obs=5);
+       label COUNT="Num of Observations";
+       label PERCENT="Num of Observations Occupy Total Amount";
+       set sashelp.class(drop=Obs);
 run;
 title;
 footnote;
@@ -112,6 +115,9 @@ _1617 which is created by proc sql.
 
 proc print
        data = Count1_Desc (obs=5);
+       label COUNT="Num of Observations";
+       label PERCENT="Num of Observations Occupy Total Amount";
+       set sashelp.class(drop=Obs);
 run;
 title;
 footnote;
@@ -162,6 +168,9 @@ better conclusion.
 
 proc print
        data = Count2_Desc (obs=5);
+       label COUNT="Num of Observations";
+       label PERCENT="Num of Observations Occupy Total Amount";
+       set sashelp.class(drop=Obs);
 run;
 title;
 footnote;
