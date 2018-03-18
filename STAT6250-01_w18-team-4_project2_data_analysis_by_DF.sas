@@ -63,15 +63,6 @@ took place most in 2017. Use similar code to do the next research question
 for comparsion.
 ;
 
-data Count_Desc;
-      set PERCENT;
-      array _nums {*} _numeric_;
-      do i = 1 to dim(_nums);
-      _nums{i} = round(_nums{i},.01);
-end;
-drop i;
-run;
-
 proc print
        data = Count_Desc (obs=5) label Noobs;
        label COUNT="Num of Observations";
@@ -123,7 +114,7 @@ _1617 which is created by proc sql.
 ;
 
 proc print
-       data = Count1_Desc (obs=5) label;
+       data = Count1_Desc (obs=5) label Noobs;
        label COUNT="Num of Observations";
        label PERCENT="Num of Observations Occupy Total Amount";
 
@@ -176,7 +167,7 @@ better conclusion.
 ;
 
 proc print
-       data = Count2_Desc (obs=5) label;
+       data = Count2_Desc (obs=5) label Noobs;
        label COUNT="Num of Observations";
        label PERCENT="Num of Observations Occupy Total Amount";
  
