@@ -36,14 +36,22 @@ title2
 ;
 
 footnote1
-"Based on the data the top 5 zip codes with the maximum number of Fire inspections are-"
+"Based on the data the top 5 zip codes with the maximum number of Fire inspections are typically the same for both the years"
 ;
 
 footnote2
-"Given the magnitude of these changes, further investigation should be performed to ensure no data errors are involved."
+"As can be seen in the output table, this result will help us to know if there is a growth in number of inspections, what is the reason behind it? 
 ;
 
 footnote3
+"Whether population was the main cause or was it some warning issued due to a potential hazard."
+;
+
+footnote4
+"Further investigation should be performed to ensure no data errors are involved."
+;
+
+footnote5
 "However, assuming there are no data issues underlying this analysis, further check needs to be performed with a larger data set."
 ;
 
@@ -62,10 +70,7 @@ Follow-up Steps: More carefully clean values in order to filter out any possible
 illegal values, and better handle missing data.
 ;
 
-proc print
-       data = Count_Inspection_Desc (obs=5)
-   ;
-run;
+
 
 title;
 footnote;
@@ -84,14 +89,18 @@ title2
 ;
 
 footnote1
-"As can be from the data ,this can be used to find common inspection types and its status."
+"As can be seen from the data ,this result can be used to manage the head count in a team."
 ;
 
 footnote2
-"In future this data can help identify the billable inspections even better."
+"This would help us to manage the revenue vs expense."
 ;
 
 footnote3
+"In future this data can help identify the billable inspections even better."
+;
+
+footnote4
 "However we are testing with the subset of data and need to iteratively expand to a significant larger data set to conclude."
 ;
 
@@ -148,6 +157,14 @@ footnote1
 ;
 
 footnote2
+"Based on the output table, item 391 is non-certification of fire-system and 16ALR12 is fire alarms not maintained."
+;
+
+footnote3
+"This helps the fire department to impart awareness regarding the potential hazards related to the violations in the respective districts."
+;
+
+footnote4
 "However,since this is a subset of data ,we will need to iteratively test with larger data sets before concluding "
 ;
 
